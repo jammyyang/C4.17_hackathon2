@@ -1,3 +1,4 @@
+
 /**
  * Open Weather API
  */
@@ -31,3 +32,5 @@ function call(){
 //     console.log('error');
 // }
 // $.ajax(options);
+
+
