@@ -2,9 +2,6 @@
 /**
  * Open Weather API
  */
-
-
-// var totalOptions = options;
 var trailChoices;
 
 
@@ -41,7 +38,8 @@ function displayTrails () {
     }
 
 }
-function call(){
+
+function getWeatherData (){
     $.ajax({
         url: "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=0b8c405de2b767fa2d70b9d5a5325856",
         method: "GET",
@@ -49,10 +47,11 @@ function call(){
         // async: true,
         // crossDomain: true,
         success: function(result){
-            console.log("This is the result", result);
+            console.log("This is the weather result", result);
         }
     });
 }
+
 
 
 
