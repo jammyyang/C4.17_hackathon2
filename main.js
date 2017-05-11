@@ -35,6 +35,7 @@ function getTrailData(){
 function displayTrails () {
     for (var i=0; i<trailChoices.object.places.length; i++) {
         var trailName = object.places[0].name;
+        var trailDescription = object[]
     }
 
 }
