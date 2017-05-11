@@ -1,9 +1,7 @@
-
 /**
  * Open Weather API
  */
 var trailChoices;
-
 
 function getTrailData(){
     var options = {
@@ -35,7 +33,6 @@ function getTrailData(){
 function displayTrails () {
     for (var i=0; i<trailChoices.object.places.length; i++) {
         var trailName = object.places[0].name;
-        var trailDescription = object[]
     }
 
 }
@@ -49,11 +46,40 @@ function getWeatherData (){
         // crossDomain: true,
         success: function(result){
             console.log("This is the weather result", result);
+            var weather = result;
+            for(var i=0; i<weather.city.length; i++){
+                var weather_city = weather.city.country;
+                displayWeather(weather_city, )
+            }
         }
     });
 }
 
+function displayWeather() {
 
+
+}
+
+function getFlickerData(){
+    var options = {
+        url:'',
+        success: handleSuccess,
+        error: handleError,
+        dataType: 'json',
+        method: 'get'
+    };
+
+    function handleSuccess(result){
+        console.log('success', result);
+        pictureChoices = result;
+    }
+
+    function handleError(){
+        console.log('error');
+    }
+
+    $.ajax(options);
+}
 
 
 
@@ -74,6 +100,3 @@ function getWeatherData (){
 //     console.log('error');
 // }
 // $.ajax(options);
-
-
-
