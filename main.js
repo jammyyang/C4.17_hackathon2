@@ -54,6 +54,10 @@ function call(){
     });
 }
 
+
+
+
+
 // var options = {
 //     url: 'http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=0b8c405de2b767fa2d70b9d5a5325856',
 //     method: 'GET',
