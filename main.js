@@ -42,7 +42,7 @@ function displayTrails () {
 
 function getWeatherData (){
     $.ajax({
-        url: "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=0b8c405de2b767fa2d70b9d5a5325856",
+        url: "http://api.openweathermap.org/data/2.5/forecast?id=5257570&APPID=0b8c405de2b767fa2d70b9d5a5325856",
         method: "GET",
         dataType: 'json',
         // async: true,
