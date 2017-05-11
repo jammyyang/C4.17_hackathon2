@@ -48,17 +48,30 @@ function getWeatherData (){
             console.log("This is the weather result", result);
             var weather = result;
             for(var i=0; i<weather.city.length; i++){
+
+                var weather_city = weather.city.name;
+                // var temp = weather.list[i].main.temp;
+                var weatherDiv = $('<div>').text(weather_city);
+                $('#hello').append(weather_city);
                 var weather_city = weather.city.country;
                 displayWeather(weather_city, )
+
             }
         }
     });
 }
 
+
+// function displayWeather() {
+//     $(#).append(displayWeather);
+//
+// }
+
 function displayWeather() {
 
 
 }
+
 
 function getFlickerData(){
     var options = {
@@ -99,4 +112,9 @@ function getFlickerData(){
 // function errorHandler () {
 //     console.log('error');
 // }
+
 // $.ajax(options);
+
+
+// $.ajax(options);
+
