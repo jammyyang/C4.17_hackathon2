@@ -53,26 +53,7 @@ function getWeatherData (){
     });
 }
 
-function getFlickerData(){
-    var options = {
-        url:'',
-        success: handleSuccess,
-        error: handleError,
-        dataType: 'json',
-        method: 'get'
-    };
 
-    function handleSuccess(result){
-        console.log('success', result);
-        pictureChoices = result;
-    }
-
-    function handleError(){
-        console.log('error');
-    }
-
-    $.ajax(options);
-}
 
 
 
