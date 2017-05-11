@@ -1,27 +1,48 @@
 
-/**
- * Open Weather API
- */
 var trailChoices;
+var lat;
+var lon;
+var radius = 25;
 
 
-function getTrailData(){
+function getLocationTrailWeather() {
+    loadMessage();
+    getLocation();
+}
+
+function loadMessage() {
+    alert("waiting for trails");
+}
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+       alert("Geolocation is not supported by this browser.");
+    }
+}
+
+function showPosition(position){
+    console.log("This is the position object", position);
+    lat = position.coords.latitude;
+    lon = position.coords.longitude;
+    getTrailData(lat, lon, radius);
+}
+
+function getTrailData(lat, lon, radius){
     var options = {
-        url:'http://localhost:8888/server/trailApi.php?lat=33.6839&lon=-117.7947&radius=25',
+        url:'server/trailApi.php?lat='+lat+"&lon="+lon+"&radius="+radius,
         success: handleSuccess,
         error: handleError,
         dataType: 'json',
-        method: 'get'
-        // data: {
-        //     lat:33.6839,
-        //     lon: -117.7947,
-        //     radius:25
-        // }
+        method: 'get',
+        crossDomain: true
     };
 
     function handleSuccess(result){
         console.log('success', result);
         trailChoices = result;
+        getWeatherData();
     }
 
     function handleError(){
@@ -29,15 +50,6 @@ function getTrailData(){
     }
 
     $.ajax(options);
-}
-
-
-function displayTrails () {
-    for (var i=0; i<trailChoices.object.places.length; i++) {
-        var trailName = object.places[0].name;
-        var trailDescription = object[]
-    }
-
 }
 
 function getWeatherData (){
@@ -74,6 +86,13 @@ function getFlickerData(){
     $.ajax(options);
 }
 
+function displayTrails () {
+    for (var i=0; i<trailChoices.object.places.length; i++) {
+        var trailName = trailChoices.object.places[i].name;
+        var trailDescription = trailChoices.object.places[i].description;
+        var trailCity = trailChoices.object.places[i].location;
+    }
+}
 
 
 

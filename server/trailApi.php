@@ -1,4 +1,6 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+
 if(empty($_GET['lat'])){
     $_GET['lat'] = 34.2364;
 }
