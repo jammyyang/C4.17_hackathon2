@@ -1,9 +1,7 @@
-
 var trailChoices;
 var lat;
 var lon;
 var radius = 25;
-
 
 function getLocationTrailWeather() {
     loadMessage();
@@ -52,6 +50,13 @@ function getTrailData(lat, lon, radius){
     $.ajax(options);
 }
 
+function displayTrails () {
+    for (var i=0; i<trailChoices.object.places.length; i++) {
+        var trailName = object.places[0].name;
+    }
+
+}
+
 function getWeatherData (){
     $.ajax({
         url: "http://api.openweathermap.org/data/2.5/forecast?id=5257570&APPID=0b8c405de2b767fa2d70b9d5a5325856",
@@ -61,9 +66,32 @@ function getWeatherData (){
         // crossDomain: true,
         success: function(result){
             console.log("This is the weather result", result);
+            var weather = result;
+            for(var i=0; i<weather.city.length; i++){
+
+                var weather_city = weather.city.name;
+                // var temp = weather.list[i].main.temp;
+                var weatherDiv = $('<div>').text(weather_city);
+                $('#hello').append(weather_city);
+                var weather_city = weather.city.country;
+                displayWeather(weather_city, )
+
+            }
         }
     });
 }
+
+
+// function displayWeather() {
+//     $(#).append(displayWeather);
+//
+// }
+
+function displayWeather() {
+
+
+}
+
 
 function getFlickerData(){
     var options = {
@@ -111,7 +139,9 @@ function displayTrails () {
 // function errorHandler () {
 //     console.log('error');
 // }
+
 // $.ajax(options);
 
 
+// $.ajax(options);
 
