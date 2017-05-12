@@ -70,9 +70,9 @@ function getWeatherData (){
             for(var i=0; i<weather.city.length; i++){
 
                 var weather_city = weather.city.name;
-                // var temp = weather.list[i].main.temp;
+                var temp = weather.list[i].main.temp;
                 var weatherDiv = $('<div>').text(weather_city);
-                $('#hello').append(weather_city);
+                $('.').append(weather_city);
                 var weather_city = weather.city.country;
                 displayWeather(weather_city, )
 
@@ -93,26 +93,6 @@ function displayWeather() {
 }
 
 
-function getFlickerData(){
-    var options = {
-        url:'',
-        success: handleSuccess,
-        error: handleError,
-        dataType: 'json',
-        method: 'get'
-    };
-
-    function handleSuccess(result){
-        console.log('success', result);
-        pictureChoices = result;
-    }
-
-    function handleError(){
-        console.log('error');
-    }
-
-    $.ajax(options);
-}
 
 function displayTrails () {
     for (var i=0; i<trailChoices.object.places.length; i++) {
