@@ -47,3 +47,7 @@ img {
     font-size: 40px;
     color: #bdbdbd;
 }
+
+.weatherIcon {
+    width: 10%;
+}

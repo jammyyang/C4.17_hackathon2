@@ -1,29 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+        $(document).ready(function(){
+            var cardColumn = $('<div>', {
+                class: "col-sm-3"
+            });
+
+            var cardDiv = $('<div>', {
+                class: "pic"
+            });
+
+            var imgDiv = $('<img>', {
+                src:"https://c1.staticflickr.com/7/6204/6047319257_b27c1be597_m.jpg"
+            });
+
+            var picBottomDiv = $('<div>', {
+                class: "picBottom"
+            });
+
+
+            var trailNameDiv = $('<div>', {
+                class: "trailName d-inline",
+                text: 'shady canyon'
+            });
+
+
+            var trailTempDiv = $('<div>', {
+                class: "trailTemp d-inline",
+                text: '75'
+            });
+
+            picBottomDiv.append(trailNameDiv, trailTempDiv);
+            cardDiv.append(imgDiv, picBottomDiv);
+            cardColumn.append(cardDiv);
+            $('.row').append(cardColumn);
+        });
+
+
+
+    </script>
+</head>
 <body>
+    <div class="container-fluid bg-3">
+        <div class="row">
 
-<p>Click the button to get your coordinates.</p>
-
-<button onclick="getLocation()">Try It</button>
-
-<p id="demo"></p>
-
-<script>
-    var x = document.getElementById("demo");
-
-    function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else {
-            x.innerHTML = "Geolocation is not supported by this browser.";
-        }
-    }
-
-    function showPosition(position) {
-        x.innerHTML = "Latitude: " + position.coords.latitude +
-            "<br>Longitude: " + position.coords.longitude;
-    }
-</script>
-
+        </div>
+    </div>
 </body>
 </html>
