@@ -26,18 +26,18 @@ function initMap() {
         title: 'Click to zoom'
     });
 
-    // map.addListener('center_changed', function() {
-    //     // 3 seconds after the center of the map has changed, pan back to the
-    //     // marker.
-    //     window.setTimeout(function() {
-    //         map.panTo(marker.getPosition());
-    //     }, 3000);
-    // });
-    //
-    // marker.addListener('click', function() {
-    //     map.setZoom(10);
-    //     map.setCenter(marker.getPosition());
-    // });
+    map.addListener('center_changed', function() {
+        // 3 seconds after the center of the map has changed, pan back to the
+        // marker.
+        window.setTimeout(function() {
+            map.panTo(marker.getPosition());
+        }, 3000);
+    });
+
+    marker.addListener('click', function() {
+        map.setZoom(10);
+        map.setCenter(marker.getPosition());
+    });
 
 }
 
@@ -47,8 +47,13 @@ function getLocationTrailWeather() {
 }
 
 function loadMessage() {
-    alert("waiting for trails");
+    $("#loadIntro").modal("show");
+    setTimeout(function(){
+        $("#loadIntro").modal("hide");
+    }, 3000);
 }
+
+
 
 function getLocation() {
     if (navigator.geolocation) {
