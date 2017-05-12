@@ -23,6 +23,10 @@
     margin-top: 20px;
 }
 
+.pic > img {
+    max-height: 177px;
+}
+
 img {
     width: 100%;
 }
@@ -45,9 +49,12 @@ img {
     text-align: right;
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 40px;
-    color: #bdbdbd;
+    color: rgba(255,255,255,0.5);
 }
 
 .weatherIcon {
     width: 10%;
 }
+
+.trailName.d-inline {
+    height: 24px;

@@ -4,6 +4,22 @@ var lon;
 var radius = 25;
 var trailTemps = [];
 
+// function cityPosition (){
+//     var cityInput = $("#cityInput").val();
+//     $.ajax({
+//         url: "https://maps.googleapis.com/maps/api/geocode/json?&address=" + cityInput,
+//         method: "get",
+//         dataType: "json",
+//         success: function(result){
+//             console.log("We have a result", result);
+//         },
+//         error: function(){
+//             console.log("This thing sucks");
+//         }
+//     })
+// }
+
+
 function getLocationTrailWeather() {
     loadMessage();
     getLocation();
@@ -43,7 +59,6 @@ function getTrailData(lat, lon, radius){
         trailChoices = result.places;
         displayCards();
 
-
     }
 
     function handleError(){
@@ -54,9 +69,12 @@ function getTrailData(lat, lon, radius){
 }
 
 function displayCards () {
+
     for (var i=0; i<trailChoices.length; i++) {
+        var random = Math.floor(Math.random() * 24 + 1);
         var trailName = trailChoices[i].name;
         var cityTemps = trailTemps[i];
+        var trailLocation = trailChoices[i].city;
         console.log('city temps,', cityTemps);
         var cardColumn = $('<div>', {
             class: "col-sm-3"
@@ -67,8 +85,11 @@ function displayCards () {
         });
 
         var imgDiv = $('<img>', {
-            src: "https://c1.staticflickr.com/7/6204/6047319257_b27c1be597_m.jpg"
+            // src: "https://c1.staticflickr.com/7/6204/6047319257_b27c1be597_m.jpg"
+            src: 'trail_image/' + random + '.jpg',
+            // class: "imgDiv"
         });
+
 
         var picBottomDiv = $('<div>', {
             class: "picBottom"
@@ -77,7 +98,7 @@ function displayCards () {
 
         var trailNameDiv = $('<div>', {
             class: "trailName d-inline",
-            text: trailName
+            text: trailName + ' - ' + trailLocation
         });
 
 
@@ -88,12 +109,11 @@ function displayCards () {
 
         picBottomDiv.append(trailNameDiv, trailTempDiv);
         cardDiv.append(imgDiv, picBottomDiv);
+        // $(imgDiv).css('background-image','url("trail_image/' + ranNum + '.jpg")');
         cardColumn.append(cardDiv);
         $('.row').append(cardColumn);
         getWeatherData(trailChoices[i],trailTempDiv);
     }
-
-
 }
 function convertDegreesKToF(kTemp){
     return kTemp * 9/5 - 459.67;
@@ -126,47 +146,8 @@ function getWeatherData (trail,displayElement){
             //displayElement.append();
 
         }
-    })
+    });
 
     console.log(trailTemps);
 }
-
-
-
-// function displayWeather() {
-//     $(#).append(displayWeather);
-//
-// }
-
-
-// function displayTrails () {
-//     for (var i=0; i<trailChoices.object.places.length; i++) {
-//         var trailName = trailChoices.object.places[i].name;
-//         var trailDescription = trailChoices.object.places[i].description;
-//         var trailCity = trailChoices.object.places[i].location;
-//     }
-// }
-
-
-
-// var options = {
-//     url: 'http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=0b8c405de2b767fa2d70b9d5a5325856',
-//     method: 'GET',
-//     dataType: 'json',
-//     success: successHandler,
-//     error: errorHandler,
-// }
-//
-// function successHandler(result) {
-//     console.log('success', result);
-// }
-//
-// function errorHandler () {
-//     console.log('error');
-// }
-
-// $.ajax(options);
-
-
-// $.ajax(options);
 
