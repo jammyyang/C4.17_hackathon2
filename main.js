@@ -4,6 +4,43 @@ var lon;
 var radius = 25;
 var trailTemps = [];
 
+$(document).ready(function() {
+    $(".pic").click(initMap);
+
+})
+
+// trailChoices.[i].lat
+// trailChoices.[i].lon
+
+function initMap() {
+    var myLatlng = {lat: 33.8794, lng: -117.92569};
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: myLatlng
+    });
+
+    var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map,
+        title: 'Click to zoom'
+    });
+
+    // map.addListener('center_changed', function() {
+    //     // 3 seconds after the center of the map has changed, pan back to the
+    //     // marker.
+    //     window.setTimeout(function() {
+    //         map.panTo(marker.getPosition());
+    //     }, 3000);
+    // });
+    //
+    // marker.addListener('click', function() {
+    //     map.setZoom(10);
+    //     map.setCenter(marker.getPosition());
+    // });
+
+}
+
 function getLocationTrailWeather() {
     loadMessage();
     getLocation();
@@ -92,9 +129,8 @@ function displayCards () {
         $('.row').append(cardColumn);
         getWeatherData(trailChoices[i],trailTempDiv);
     }
-
-
 }
+
 function convertDegreesKToF(kTemp){
     return kTemp * 9/5 - 459.67;
 }
