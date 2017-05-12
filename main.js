@@ -124,6 +124,7 @@ function getWeatherData (trail,displayElement){
             displayElement.append(weatherIcon);
             console.log(trail);
             //displayElement.append();
+
         }
     })
 
@@ -137,32 +138,6 @@ function getWeatherData (trail,displayElement){
 //
 // }
 
-// function displayWeather() {
-//
-//
-// }
-//
-//
-// function getFlickerData(){
-//     var options = {
-//         url:'',
-//         success: handleSuccess,
-//         error: handleError,
-//         dataType: 'json',
-//         method: 'get'
-//     };
-//
-//     function handleSuccess(result){
-//         console.log('success', result);
-//         pictureChoices = result;
-//     }
-//
-//     function handleError(){
-//         console.log('error');
-//     }
-
-    // $.ajax(options);
-// }
 
 // function displayTrails () {
 //     for (var i=0; i<trailChoices.object.places.length; i++) {
