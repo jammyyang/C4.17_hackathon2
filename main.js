@@ -10,8 +10,12 @@ function getLocationTrailWeather() {
 }
 
 function loadMessage() {
-    alert("waiting for trails");
+    $("#loadIntro").modal("show");
 }
+
+setTimeout(function(){
+    $("#loadIntro").modal("hide");
+}, 3000);
 
 function getLocation() {
     if (navigator.geolocation) {
