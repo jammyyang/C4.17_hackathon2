@@ -1,55 +1,22 @@
-# C4.17_hackathon 2
+# trailmix.world
 
-Hackathon project involving the combination of different data sources into an application or game
+An application that finds hiking trails near you. 
 
-### Requirements
-- Combine at least 3 **external** resources via AJAX requests and present their information in an application
-- Must be documented loosely on JSDOC standards
-- Must be issue-managed via meistertask 
-  - share the meistertask with daniel.paschal@learningfuze.com
-  - name your project 4.17 Team [your team number] Hackathon
+### Technology Used
+- JQuery to build the DOM.
+- Functional application using JavaScript.
+- API calls using AJAX.
 
 
-### Judging Criteria
-- **Appeal** : is it visually appealing / well put together
-- **Code Quality** : is the code properly formatted, are variables and functions well defined and documented
-- **Presentation** : How well is it presented during the unveiling session
-- **Task / Issue Management** : How well was the development process documented / controlled.  Were there well-defined issues, milestones, and project management
-- **Innovative / Transformative** : Did the project do something new and exciting?  Was it bold and tried to do things that haven't been done much.  Did it combine the data sources together in a way that was more useful than either source by itself
-- **Ease of Use / Understanding** : Was it easy to use the application / game, or if it was more complex, was the application or game able to provide you with tutorials or instructions that made understanding it a breeze.
+### Experience Building the Application
+- Application built through a 2-Day Hackathon.
+- Worked in a team of 5 to build the application.
+- Had in mind the user to better themselves through our application.  
 
 
-### Teams
-- Team 1
-  - Insoo 
-  - Paul 
-  - John K
-  - Jammy 
 
-- Team 2
-  - John M
-  - Jack 
-  - Anna 
-  - Johnny 
-
-- Team 3
-  - Adam 
-  - David 
-  - Steven 
-  - Regis 
-
-- Team 4
-  - Timothy 
-  - Jinwoo 
-  - Jason 
-  - Vincent
-
-- Team 5
-  - Alexandra
-  - Seung
-  - Ryan
-  - Jeff
-
-### Deadline: 
-- 1:00PM Friday, May 10, 2017
-
+### Future Feature Sets
+- Search trails in another city rather than where you currently located. 
+- Build out in React Native.
+- User login to keep track of trails hiked.  
+- Turn it into a social media app for hiker enthusiasts and hikers enthusiasts to be. 

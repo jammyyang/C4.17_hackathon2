@@ -3,26 +3,47 @@ var lat;
 var lon;
 var radius = 25;
 var trailTemps = [];
+var newCityLocation;
 
-// function cityPosition (){
-//     var cityInput = $("#cityInput").val();
-//     $.ajax({
-//         url: "https://maps.googleapis.com/maps/api/geocode/json?&address=" + cityInput,
-//         method: "get",
-//         dataType: "json",
-//         success: function(result){
-//             console.log("We have a result", result);
-//         },
-//         error: function(){
-//             console.log("This thing sucks");
-//         }
-//     })
-// }
+// //Beginning---code for inputting other city than where you are and displaying trails-----//
+// $('button').click(function() {
+//     cityPosition();
+//     }
+// );
+
+function cityPosition (){
+    var cityInput = $("#cityInput").val();
+    $.ajax({
+        url: "https://maps.googleapis.com/maps/api/geocode/json?&address="+ cityInput + '"',
+        method: "get",
+        dataType: "json",
+        success: function(result){
+            console.log("We have a result", result);
+            newCityLocation = result;
+        },
+        error: function(){
+            console.log("This thing not working");
+        }
+    });
+
+    // getTrailData(lat,lon, radius);
+}
+//End---code for inputting other city than where you are and displaying trails-----//
+
+//Beginning---code for clicking a div to display main activities----//
+function displayMainTrailLocationActivity () {
+    var activity1 = trailChoices[i].activities[0].activity_type_name;
+    var activity2 = trailChoices[i].activities[1].activity_type_name;
+
+}
+//End---code for clicking a div to display main activities----//
+
+
 
 $(document).ready(function() {
     $(".pic").click(initMap);
 
-})
+});
 
 // trailChoices.[i].lat
 // trailChoices.[i].lon
@@ -46,7 +67,7 @@ function initMap() {
         // marker.
         window.setTimeout(function() {
             map.panTo(marker.getPosition());
-        }, 3000);
+        }, 4500);
     });
 
     marker.addListener('click', function() {
@@ -65,7 +86,7 @@ function loadMessage() {
     $("#loadIntro").modal("show");
     setTimeout(function(){
         $("#loadIntro").modal("hide");
-    }, 3000);
+    }, 5000);
 }
 
 
@@ -92,7 +113,7 @@ function getTrailData(lat, lon, radius){
         error: handleError,
         dataType: 'json',
         method: 'get',
-        crossDomain: true
+        crossdomain: true
     };
 
     function handleTrailSuccess(result){
@@ -128,7 +149,7 @@ function displayCards () {
         var imgDiv = $('<img>', {
             // src: "https://c1.staticflickr.com/7/6204/6047319257_b27c1be597_m.jpg"
             src: 'trail_image/' + random + '.jpg',
-            // class: "imgDiv"
+            class: "imgDiv"
         });
 
 
@@ -155,6 +176,17 @@ function displayCards () {
         $('.row').append(cardColumn);
         getWeatherData(trailChoices[i],trailTempDiv);
     }
+
+
+    $(".picBottom").click(function() {
+        // alert("click bottom works")
+        $("#myModal").modal("show");
+    });
+
+    $(".imgDiv").click(function() {
+        // alert("click bottom works")
+        $("#openModal").modal("show");
+    });
 }
 
 function convertDegreesKToF(kTemp){

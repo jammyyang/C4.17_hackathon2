@@ -1,4 +1,8 @@
 /* Remove the navbar's default margin-bottom and rounded borders */
+body, html {
+    height: 100%;
+    margin: 0;
+}
 
 .navbar {
     height: 100px;
@@ -33,8 +37,8 @@ img {
 
 .picBottom {
     width: 100%;
-    height: 5vh;
     background-color: #96b604;
+    /*height:5vh*/
     padding: 10px;
     /*position: absolute;*/
 }
@@ -63,3 +67,66 @@ img {
 #map {
     height: 500px;
 }
+
+/*#loadIntro {*/
+/*text-align: center;*/
+/*}*/
+
+#oneIntro {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    overflow: auto;
+    /*background-color: #96b604 ;*/
+}
+
+#twoIntro {
+    background: url('https://c2.staticflickr.com/6/5482/9633371139_f1cc1b3298_b.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+#threeIntro {
+    font-family: ‘Anton’, sans-serif;
+    font-size: 6vh;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+
+
+@keyframes rotation {
+    0% {
+        transform: rotate(45deg);
+    }
+    100% {
+        transform: rotate(765deg);
+    }
+
+}
+.compass-point {
+    animation-name: rotation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+.top {
+    transform-origin: center bottom;
+}
+.bottom {
+    transform-origin: center top;
+}
+
+#googleMap{
+    height: 300px;
+    width: 500px;
+}
+
+
+
+/*compass animation ends*/
