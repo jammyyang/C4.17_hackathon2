@@ -197,7 +197,7 @@ function getWeatherData (trail,displayElement){
 
 
     $.ajax({
-        url: "http://api.openweathermap.org/data/2.5/weather?q=" + trail.city + ",us&APPID=0b8c405de2b767fa2d70b9d5a5325856",
+        url: "https://api.openweathermap.org/data/2.5/weather?q=" + trail.city + ",us&APPID=0b8c405de2b767fa2d70b9d5a5325856",
         method: "GET",
         dataType: 'json',
         // async: true,
@@ -212,7 +212,7 @@ function getWeatherData (trail,displayElement){
             displayElement.text(Math.floor(convertDegreesKToF(result.main.temp)));
             displayElement.append(degreesSymbol)
             var weatherIcon = $("<img>",{
-                src: "http://openweathermap.org/img/w/" + result.weather[0].icon + ".png",
+                src: "https://openweathermap.org/img/w/" + result.weather[0].icon + ".png",
                 class: 'weatherIcon'
             });
             displayElement.append(weatherIcon);
